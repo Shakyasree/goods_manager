@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home</title>
+<style>
+    body{
+       
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      
+    }
+    div 
+    {
+        background-color:"#ffe4b5";
+    }
+    button {
+        background-color:rgba(255, 153, 71);
+        border: none;
+        color: ;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+    header {
+      
+        padding: 2px;
+        text-align: center;
+        font-size: 15px;
+
+      }
+      h2,h3 {
+        font-family: verdana;
+        font-size: 35px;
+        color:white;
+        text-align: left;
+      }
+      
+      p {
+        color:white;
+        text-align: left;
+        padding:3px;
+        font-size:20px;
+      }
+      
+</style>
+</head>
+    <body background="https://pearlsol.com/img/breadcrumb/hd%20blog%20pic.jpg">
+           <!-- {% if user.is_authenticated %} -->
+    <div class="alert alert-success" role="alert">
+        <a href="show">show details</a>
+        <h3>Welcome {{ user.username }}!</h3>
+        <a href="{% url 'logout' %}">Logout?</a>
+    </div>
+<!-- {% else %} -->
+    <div class="alert alert-success" role="alert">
+       <header><h1> 
+        <font color="#FF2626">W</font>
+        <font color="#753422">E</font>
+        <font color="#FFD523">L</font>
+        <font color="#71EFA3">C</font>
+        <font color="#0F52BA">O</font>
+        <font color="#66CC66">M</font>
+        <font color="#FF9966">E</font>
+        <font color="#FFCCCC">!</font>
+       </h1></header><br>
+      <h2> Why is inventory management important?</h2><div class="as">
+<p>Inventory management is one of the core areas of Education, IT infrastructure and facilities management.<br> In educational institutions such as schools, colleges, and universities, inventory management<br> covers all things used by staff and students.<br><br><br>
+<br>Educational institution inventory includes movable assets such as seats, desks, blackboards, projectors,<br> library assets, and books.
+There could be several types of inventory – <br>but all of them need to be managed and accounted for in a school inventory management system.<br> Without inventory management, it will be difficult to estimate the efficiency and cost-to-benefits ratio of inventory.</p> </div>
+<br>  <br>     
+
+        <br>
+
+         <button ><a href="{% url 'register' %}">Signup</a></button>
+        <button><a href="{% url 'login' %}">Login</a></button>
+        
+    </div>
+<!-- {% endif %} -->
+</body>
+</html>

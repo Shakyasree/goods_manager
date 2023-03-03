@@ -1,0 +1,77 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Stock Records</title>  
+     {% load static %}  
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
+    <style>
+        body{
+            background-color: beige; 
+        }
+        
+        th{
+            padding-left:175px;
+            margin-top:20px;
+            font-size: 15px;
+            margin-left:70px;
+            margin-right:10px;
+            padding-top: 35px;
+            padding-bottom:10px;
+        }
+        td{
+            font-size: 15px;
+            padding-left:175px;
+            padding-bottom:6px;
+        }
+        .b{
+            text-decoration: none;
+            border:2px solid black;
+           background-color:lavender;
+            width:60px;
+            height:30px;
+            padding: 6px;
+        }
+        .b:hover{
+            background-color: violet
+        }
+        .c2{
+            text-decoration: none;
+            color: blueviolet;
+            font-weight :bold;
+        }
+        .c2:hover{
+            background-color: chartreuse;
+        }
+    </style>
+</head>  
+<body>  
+<table class="table table-striped table-bordered table-sm">  
+    <thead class="thead-dark">  
+    <tr>  
+        <th>Stock ID</th>  
+        <th>Stock Name</th>  
+        <th>Stock Quantity</th>  
+        <th>Actions</th>  
+    </tr>  
+    </thead>  
+    <tbody>  
+{% for stock in stocks %}  
+    <tr>  
+        <td>{{ stock.sid }}</td>    
+        <td>{{ stock.sname }}</td>   
+        <td>{{ stock.squantity }}</td>  
+        <td>  
+            <a href="/edit/{{ stock.id }}" class="c2"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
+            <a href="/delete/{{ stock.id }}" class="c2">Delete</a>  
+        </td>  
+    </tr>  
+{% endfor %}  
+    </tbody>  
+</table>  
+<br>  
+<br>  
+<center><a href="/add" class="b">Add New Record</a></center><br>
+<center><a href="/logout" class="b">LOGOUT</a></center>  
+</body>  
+</html>

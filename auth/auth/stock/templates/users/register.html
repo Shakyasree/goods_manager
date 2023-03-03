@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Register Page</title>
+        <style>
+            body{
+                text-align: center;
+                background-color: ivory;
+            }
+            form{
+                align-items: center;
+                width:35%;
+                height:42%;
+                margin-left:35%;
+                margin-right: 50px;
+                padding: 5px;
+                border:2px solid black;
+                border: radius 4px;
+                background-color: beige;
+                border-radius:4px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h3><u>Register here</u></h3>
+
+<form action="" method="POST">
+    {% csrf_token %}
+
+    {% for field in form %}
+        <div>
+            <p>{{ field.label }}: {{ field }}</p> 
+
+            {% for error in field.errors %}
+                <small style="color: red">{{ error }}</small>
+            {% endfor %}
+        </div>
+    {% endfor %}
+    <br>
+    <button type="submit">Register</button>
+</form>
+    </body>
+</html>
